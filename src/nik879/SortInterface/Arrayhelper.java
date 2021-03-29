@@ -3,37 +3,41 @@ package nik879.SortInterface;
 public class Arrayhelper {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 6, 8, 4, 6, 8, 5, 4, 3};
-        arrangeOrder(numbers);
+        Car Honda = new Car("Honda Civic", 2002, 102_000);
+        Car Audi = new Car("Audi A5", 2015, 160_000);
+        Car Mercedes = new Car("Mercedes R500", 1988, 18_000);
+        Car[] Cars = {Honda, Audi, Mercedes};
+        arrangeOrder(Cars);
 
     }
 
-    public static void arrangeOrder(int[] numbers) {
+    public static void arrangeOrder(Car[] Cars) {
 
         System.out.println("Unsortiert:");
 
-        for (int number : numbers) {
-            System.out.print(number +" ");
+        for (Car car : Cars) {
+            System.out.println(car);
         }
 
         System.out.println("\n"+"---");
 
-        int temp=0;
+        Car temp = null;
 
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j < numbers.length-1; j++) {
-                if (numbers[j] > numbers[j + 1]) {
-                    temp = numbers[j];
-                    numbers[j] = numbers[j + 1];
-                    numbers[j + 1] = temp;
+        for (int i = 0; i < Cars.length; i++) {
+            for (int j = 0; j < Cars.length-1; j++) {
+                if (Cars[j].getProductionYear() > Cars[j + 1].getProductionYear()) {
+                    temp = Cars[j];
+                    Cars[j] = Cars[j + 1];
+                    Cars[j + 1]=temp;
                 }
             }
         }
         System.out.println("sortiert:");
-
-        for (int number : numbers) {
-            System.out.print(number + " ");
+        for (Car car : Cars) {
+            System.out.println(car);
         }
+
+
     }
 
 
