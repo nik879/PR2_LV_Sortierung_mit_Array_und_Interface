@@ -1,6 +1,6 @@
 package nik879.SortInterface;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private String carType;
     private int productionYear;
     private int drivenKilometer;
@@ -42,5 +42,12 @@ public class Car {
                 ", productionYear=" + productionYear +
                 ", drivenKilometer=" + drivenKilometer +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        if(this.productionYear < o.productionYear) return -1;
+        if(this.productionYear > o.productionYear) return 1;
+        return 0;
     }
 }

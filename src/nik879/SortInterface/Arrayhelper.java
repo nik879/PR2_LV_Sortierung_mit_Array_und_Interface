@@ -1,5 +1,7 @@
 package nik879.SortInterface;
 
+import java.util.Arrays;
+
 public class Arrayhelper {
     public static void main(String[] args) {
 
@@ -21,17 +23,20 @@ public class Arrayhelper {
 
         System.out.println("\n"+"---");
 
-        Car temp = null;
+//        Car temp = null;
+//
+//        for (int i = 0; i < Cars.length; i++) {
+//            for (int j = 0; j < Cars.length-1; j++) {
+//                if (Cars[j].getProductionYear() > Cars[j + 1].getProductionYear()) {
+//                    temp = Cars[j];
+//                    Cars[j] = Cars[j + 1];
+//                    Cars[j + 1]=temp;
+//                }
+//            }
+//        }
 
-        for (int i = 0; i < Cars.length; i++) {
-            for (int j = 0; j < Cars.length-1; j++) {
-                if (Cars[j].getProductionYear() > Cars[j + 1].getProductionYear()) {
-                    temp = Cars[j];
-                    Cars[j] = Cars[j + 1];
-                    Cars[j + 1]=temp;
-                }
-            }
-        }
+        Arrays.sort(Cars);
+
         System.out.println("sortiert:");
         for (Car car : Cars) {
             System.out.println(car);
